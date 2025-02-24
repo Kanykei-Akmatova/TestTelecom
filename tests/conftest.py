@@ -21,4 +21,5 @@ def customer_data():
 
 @pytest.fixture(scope="function")
 def customer():
-    return "393170"
+    customer_id = "393170"
+    return [customer_id]
