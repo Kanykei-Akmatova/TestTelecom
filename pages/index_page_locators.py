@@ -9,4 +9,6 @@ class IndexPageLocators:
     ADD_CUSTOMER_TARIFF_LINK = (By.XPATH, "//*[@id=\"one\"]/div/div[1]/div[2]/h3/a")
     SELECT_TARIFF_PLAN_BUTTON = (By.NAME, "tariff_plan")
     ENTER_YOUR_CUSTOMER_ID_BOX = (By.NAME, "customer_id")
+    PAY_BILLING_LINK = (By.XPATH, "//*[@id=\"one\"]/div/div[3]/div[2]/h3/a")
+
 

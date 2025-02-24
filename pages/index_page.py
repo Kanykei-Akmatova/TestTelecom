@@ -28,3 +28,8 @@ class IndexPage(BasePage):
     def wait_and_click_submit_button(self):
         self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL,
                                               PayBillingPageLocators.ENTER_YOUR_CUSTOMER_ID_BOX).click()
+
+    def wait_and_click_pay_billing_button(self):
+        self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, IndexPageLocators.PAY_BILLING_LINK).click()
+
+
