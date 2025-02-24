@@ -8,3 +8,4 @@ class SelectTariffPlanPage(BasePage):
 
     def click_add_tariff_plan(self):
         self.find_element(SelectTariffPlanPageLocators.ADD_BUTTON).click()
+

@@ -1,6 +1,7 @@
 from pages.add_tariff_page_locators import AddTariffPageLocators
 from pages.base_page import BasePage
 from pages.index_page_locators import IndexPageLocators
+from pages.pay_billing_page_locators import PayBillingPageLocators
 from resources.constants import MAX_WAIT_INTERVAL
 
 
@@ -22,4 +23,8 @@ class IndexPage(BasePage):
         self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, AddTariffPageLocators.CUSTOMER_ID_TEXT_BOX).click()
 
     def wait_and_click_select_radio_button(self):
-        self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, AddTariffPageLocators.TARIFF_PLAN_LINK).click()
+        self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, AddTariffPageLocators.SELECT_TARIFF_PLAN_BUTTON).click()
+
+    def wait_and_click_submit_button(self):
+        self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL,
+                                              PayBillingPageLocators.ENTER_YOUR_CUSTOMER_ID_BOX).click()
