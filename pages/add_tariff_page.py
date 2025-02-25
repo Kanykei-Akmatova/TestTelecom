@@ -10,3 +10,13 @@ class AddTariffPage(BasePage):
 
     def click_submit_btn(self):
         self.find_element(AddTariffPageLocators.SUBMIT_BUTTON).click()
+
+    def get_inactive_label_value(self):
+        inactive_value = self.find_element(AddTariffPageLocators.INACTIVE_TEXT).text
+        return inactive_value
+
+    def get_inactive_label_color(self):
+        index_image = self.find_element(AddTariffPageLocators.INACTIVE_TEXT)
+        return index_image.get_attribute("color")
+
+
