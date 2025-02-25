@@ -32,4 +32,6 @@ class IndexPage(BasePage):
     def wait_and_click_pay_billing_button(self):
         self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, IndexPageLocators.PAY_BILLING_LINK).click()
 
-
+    def wait_and_get_index_image_src(self):
+        index_image = self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, IndexPageLocators.INDEX_IMAGE_LINK)
+        return index_image.get_attribute("src")

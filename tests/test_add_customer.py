@@ -7,10 +7,18 @@ from pages.pay_data_billing_page import PayDataBillingPage
 from pages.select_tariff_plan_page import SelectTariffPlanPage
 from pages.tariff_plan_success_page import TariffPlanSuccessPage
 from resources.constants import TEST_SITE_URL, TARIFF_PLAN_ASSIGNED, CUSTOMER_DETAILS_TEXT, PAY_BILLING_TEXT, \
-    TARIFF_PLAN_AMOUNT, USAGE_CHARGES, TOTAL_BILL
+    TARIFF_PLAN_AMOUNT, USAGE_CHARGES, TOTAL_BILL, INDEX_IMAGE_SRC
 
 
 class TestGuruPage:
+
+    # Test 1(Index Page)
+    def test_index_page(self, driver):
+        index_page = IndexPage(driver)
+        index_page.navigate_to(TEST_SITE_URL)
+
+        index_page_src = index_page.wait_and_get_index_image_src()
+        assert index_page_src.__contains__(INDEX_IMAGE_SRC),  "Index image not found!"
 
     # Test Case 1 ( Add customer)
     def test_add_customer(self, driver, customer_data):
