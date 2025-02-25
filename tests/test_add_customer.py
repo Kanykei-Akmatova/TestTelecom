@@ -6,7 +6,8 @@ from pages.pay_billing_page import PayBillingPage
 from pages.pay_data_billing_page import PayDataBillingPage
 from pages.select_tariff_plan_page import SelectTariffPlanPage
 from pages.tariff_plan_success_page import TariffPlanSuccessPage
-from resources.constants import TEST_SITE_URL, TARIFF_PLAN_ASSIGNED, CUSTOMER_DETAILS_TEXT, PAY_BILLING_TEXT
+from resources.constants import TEST_SITE_URL, TARIFF_PLAN_ASSIGNED, CUSTOMER_DETAILS_TEXT, PAY_BILLING_TEXT, \
+    TARIFF_PLAN_AMOUNT, USAGE_CHARGES, TOTAL_BILL
 
 
 class TestGuruPage:
@@ -60,6 +61,12 @@ class TestGuruPage:
         pay_data_billing_page = PayDataBillingPage(driver)
         customer_data_label = pay_data_billing_page.get_customer_data_label()
         pay_billing_label = pay_data_billing_page.get_pay_billing_label()
+        tariff_plan_amount_value = pay_data_billing_page.get_tariff_plan_amount_label()
+        usage_charges_value = pay_data_billing_page.get_usage_charges_label()
+        total_bill_value = pay_data_billing_page.get_total_bill_label()
 
         assert customer_data_label.__contains__(CUSTOMER_DETAILS_TEXT), "Customer details are incorrect!"
         assert pay_billing_label.__contains__(PAY_BILLING_TEXT), "Pay billing label is missing!"
+        assert tariff_plan_amount_value.__contains__('500'), " Tariff Plan Amount label missing!"
+        assert usage_charges_value.__contains__('250'), " Usage Charges label missing!"
+        assert total_bill_value.__contains__('750'), " Total Bill label missing!"
