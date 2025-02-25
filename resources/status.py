@@ -1,0 +1,3 @@
+class STATUS:
+    ACTIVE = "ACTIVE"
+    INACTIVE = "INACTIVE"

@@ -6,9 +6,10 @@ from pages.pay_billing_page import PayBillingPage
 from pages.pay_data_billing_page import PayDataBillingPage
 from pages.select_tariff_plan_page import SelectTariffPlanPage
 from pages.tariff_plan_success_page import TariffPlanSuccessPage
+from resources.color import COLOR
 from resources.constants import TEST_SITE_URL, TARIFF_PLAN_ASSIGNED, CUSTOMER_DETAILS_TEXT, PAY_BILLING_TEXT, \
-    INDEX_IMAGE_SRC, INACTIVE_LABEL_TEXT, \
-    INACTIVE_LABEL_COLOR
+    INDEX_IMAGE_SRC
+from resources.status import STATUS
 
 
 class TestGuruPage:
@@ -58,8 +59,8 @@ class TestGuruPage:
         tariff_plan_success_page = TariffPlanSuccessPage(driver)
         lbl_assigned_txt = tariff_plan_success_page.get_assigned_label()
 
-        assert inactive_label_value.__contains__(INACTIVE_LABEL_TEXT), "Inactive label text is incorrect!"
-        assert inactive_label_color.__contains__(INACTIVE_LABEL_COLOR), "Inactive label color is missing!"
+        assert inactive_label_value.__contains__(STATUS.INACTIVE), "Inactive label text is incorrect!"
+        assert inactive_label_color.__contains__(COLOR.RED), "Inactive label color is missing!"
         assert lbl_assigned_txt.__contains__(TARIFF_PLAN_ASSIGNED), "Congratulations Tariff Plan assigned failed!"
 
     # Test Case 3 (Pay Billing)
